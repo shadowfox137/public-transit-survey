@@ -1,7 +1,53 @@
 #hid_question{
     visibility: hidden;
+    margin: 10px;
+    margin-left: 2%;
+    size: 2%;
 }
 
 #other_work{
     visibility: hidden;
+}
+
+body {
+    background-color: rgb(114, 2, 67);
+    font-family: Arial, Helvetica, sans-serif, 'Times New Roman', Times, serif  ;
+}
+
+#user-section {
+    background-color: white;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    text-align: center;
+    height: 90%;
+    position: absolute;
+}
+
+h4 {
+    margin: 10px;
+    margin-left: 2%;
+    size: 2%;
+}
+
+#center-block {
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    height: 90%;
+    position: absolute;
+}
+
+input {
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+
+#typeOfwork {
+    margin-left: 2%;
 }

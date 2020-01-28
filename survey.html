@@ -12,65 +12,68 @@
     </head>
 
     <body>
-        <div id="description">
-            <p> This is a short survey for discovering how often people take pulic trans such as bus or 
-                subway base on the difference of their jobs. </p>
+        <div id="user-section">
+            <div id="center-block">
+                <div id="description">
+                    <p> This is a short survey for discovering how often people take pulic trans such as bus or 
+                        subway base on the difference of their jobs. </p>
+                </div>
+                <div id="survey">
+                    <form id="survey-form">
+                        <h4> Name </h4> 
+                        <input type="text" id="name-label" value="" required pattern="\b^[A-Za-z]+\b" > <br>
+                        <h4> Email </h4>
+                        <input type="email" id="email-label" size="60" placeholder="Email" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" name="number" value=""> <br>
+                        <h4> Phone number </h4>
+                        <input type="text" id="number-label" size="20" placeholder="Phone Number" value="" required pattern="\d\d\d\d\d\d\d\d\d\d"> <br>        
+                        <h4> Select the type of jobs you are currently in </h4>
+
+                        <h4> What type of job are you working on? </h4>
+                        <select id="typeOfwork" name="typeOfwork" onchange="func(this)" >
+                            <option value="Aviation" selected> Aviation </option>
+                            <option value="Art"> Art </option>
+                            <option value="Business"> Business </option>
+                            <option value="Law Enforcement"> Law Enforcement </option>
+                            <option value="Media"> Media </option>
+                            <option value="Service Industry"> Service Industry </option>
+                            <option value="Teaching"> Teaching </option>
+                            <option value="Technology"> Technology </option>
+                            <option value="Student"> Student </option>
+                            <option value="Other"> Other </option>
+                        </select>
+
+                        <h4 id="hid_question"> What job are you working on? </h4>
+                        <input type="text" id="other_work" size="20"> <br>
+
+                        <script>
+                            function func(x){
+                                if(x.value == "Other"){
+                                    show_add_ques()
+                                } else {
+                                    hid_add_ques()
+                                }
+                            }
+
+                            function hid_add_ques(){
+                                document.getElementById("other_work").style.visibility = "hidden"
+                                document.getElementById("hid_question").style.visibility = "hidden"
+                            }
+                            function show_add_ques(){
+                                document.getElementById("other_work").style.visibility = "visible"
+                                document.getElementById("hid_question").style.visibility = "visible"
+                            }
+                            
+                        </script>
+
+                        <h4> Do you use any public transit to go to work? </h4>
+                        <input type="radio" id="yes" name="tf" value="Yes"> Yes <br>
+                        <input type="radio" id="no" name="tf" value="No"> No <br>
+
+                        <input type="submit" value="submit">
+                    </form>
+                </div>
+            </div>
         </div>
-        <div id="survey">
-            <form id="survey-form">
-                <h4> Name </h4> 
-                <input type="text" id="name-label" value="" required pattern="\b^[A-Za-z]+\b" > <br>
-                <h4> Email </h4>
-                <input type="email" id="email-label" size="60" placeholder="Email" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" name="number" value=""> <br>
-                <h4> Phone number </h4>
-                <input type="text" id="number-label" size="20" placeholder="Phone Number" value="" required pattern="\d\d\d\d\d\d\d\d\d\d"> <br>        
-                <h4> Select the type of jobs you are currently in </h4>
-
-                <h4> What type of job are you working on? </h4>
-                <select id="typeOfwork" name="typeOfwork" onchange="func(this)" >
-                    <option value="Aviation" selected> Aviation </option>
-                    <option value="Art"> Art </option>
-                    <option value="Business"> Business </option>
-                    <option value="Law Enforcement"> Law Enforcement </option>
-                    <option value="Media"> Media </option>
-                    <option value="Service Industry"> Service Industry </option>
-                    <option value="Teaching"> Teaching </option>
-                    <option value="Technology"> Technology </option>
-                    <option value="Student"> Student </option>
-                    <option value="Other"> Other </option>
-                </select>
-
-                <p id="hid_question"> What job are you working on? </p>
-                <input type="text" id="other_work" size="20"> <br>
-
-                <script>
-                    function func(x){
-                        if(x.value == "Other"){
-                            show_add_ques()
-                        } else {
-                            hid_add_ques()
-                        }
-                    }
-
-                    function hid_add_ques(){
-                        document.getElementById("other_work").style.visibility = "hidden"
-                        document.getElementById("hid_question").style.visibility = "hidden"
-                    }
-                    function show_add_ques(){
-                        document.getElementById("other_work").style.visibility = "visible"
-                        document.getElementById("hid_question").style.visibility = "visible"
-                    }
-                    
-                </script>
-
-                <h4> Do you use any public transit to go to work? </h4>
-                <input type="radio" id="yes" name="tf" value="Yes"> Yes <br>
-                <input type="radio" id="no" name="tf" value="No"> No <br>
-
-                <input type="submit" value="submit">
-            </form>
-        </div>
-
     </body>
 
 </html>
